@@ -8,7 +8,7 @@
 
 A collection of various tools to support operational workflows and aid commonly repeated tasks.
 
-[![functions/](https://github.com/thetanz/coretools/actions/workflows/fn-ae-coretools-dev.yml/badge.svg)](https://github.com/thetanz/coretools/actions/workflows/fn-ae-coretools-dev.yml) [![torproxy/](https://github.com/thetanz/coretools/actions/workflows/torproxy-to-registries.yml/badge.svg)](https://github.com/thetanz/coretools/actions/workflows/torproxy-to-registries.yml)
+[![functions/](https://github.com/thetanz/coretools/actions/workflows/fn-ae-coretools-dev.yml/badge.svg)](https://github.com/thetanz/coretools/actions/workflows/fn-ae-coretools-dev.yml) [![torproxy/](https://github.com/thetanz/coretools/actions/workflows/torproxy-to-registries.yml/badge.svg)](https://github.com/thetanz/coretools/actions/workflows/torproxy-to-registries.yml) [![CodeQL](https://github.com/thetanz/coretools/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/thetanz/coretools/actions/workflows/codeql-analysis.yml)
 ---
 
 ## functions 🌐
