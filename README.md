@@ -17,7 +17,7 @@ A collection of various tools to support operational workflows and aid commonly 
 
 ***namegenerator***
 
-> this leverages the python module [coolname](https://pypi.org/project/coolname) providing random name responses as a REST API. Used to randomise project names snd create unique identifiers for cloud resources.
+> use [python/coolname](https://pypi.org/project/coolname) for random name generation as a REST API. Used to randomise project and incident names and along with create memorable identifiers for cloud resources.
 
 `GET /api/randomname`
 
@@ -27,9 +27,21 @@ A collection of various tools to support operational workflows and aid commonly 
 
 ## containers  🐳
 
+***sqlmap***
+
+takes website from `STDIN`
+
+    docker run sqlmap http://localhost
+
+***dirsearch***
+
+takes website from `STDIN`
+
+    docker run dirsearch http://localhost
+
 ***torproxy***
 
-A minimal docker image running Alpine, exposing a SOCKS5 proxy over tcp://9050
+A minimal docker image exposing a SOCKS5 proxy for onion routing (tor) over tcp://9050
 
 > Cloudflare have an [onion-routable DNS over HTTPS](https://developers.cloudflare.com/1.1.1.1/fun-stuff/dns-over-tor) endpoint available at `dns4torpnlfs2ifuz2s2yf3fc7rdmsbhm6rw75euj35pac6ap25zgqad.onion`
 
@@ -37,11 +49,7 @@ A minimal docker image running Alpine, exposing a SOCKS5 proxy over tcp://9050
 
 > ***running***
 
-```shell
-az acr login -n thetacyber
-docker run --rm --detach --name torproxy --publish 9050:9050 \
-thetacyber.azurecr.io/torproxy:latest
-```
+tbd
 
 > ***using within github actions***
 
