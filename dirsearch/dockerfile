@@ -1,6 +1,6 @@
 FROM python:3-alpine
 
-LABEL org.opencontainers.image.source https://github.com/thetanz/coretools
+LABEL org.opencontainers.image.source https://github.com/thetanz/gotham
 LABEL upstream=https://github.com/maurosoria/dirsearch
 
 RUN apk update

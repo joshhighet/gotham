@@ -8,9 +8,9 @@
 
 A collection of various tools to support operational workflows and aid commonly repeated tasks.
 
-[![CodeQL](https://github.com/thetanz/coretools/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/thetanz/coretools/actions/workflows/codeql-analysis.yml)
-[![functions/](https://github.com/thetanz/coretools/actions/workflows/fn-ae-coretools-dev.yml/badge.svg)](https://github.com/thetanz/coretools/actions/workflows/fn-ae-coretools-dev.yml)
-[![torproxy/](https://github.com/thetanz/coretools/actions/workflows/release-to-ghcr.yml/badge.svg)](https://github.com/thetanz/coretools/actions/workflows/release-to-ghcr.yml)
+[![CodeQL](https://github.com/thetanz/gotham/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/codeql-analysis.yml)
+[![functions/](https://github.com/thetanz/gotham/actions/workflows/fn-ae-coretools-dev.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/fn-ae-coretools-dev.yml)
+[![torproxy/](https://github.com/thetanz/gotham/actions/workflows/release-to-ghcr.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/release-to-ghcr.yml)
 ---
 
 ## functions 🌐
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       torproxy:
-        image: ghcr.io/thetanz/coretools/torproxy:latest
+        image: ghcr.io/thetanz/gotham/torproxy:latest
         ports:
         - 9050:9050
     steps:
