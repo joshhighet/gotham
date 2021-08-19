@@ -1,0 +1,19 @@
+FROM python:3-alpine
+
+LABEL org.opencontainers.image.source https://github.com/thetanz/containers
+LABEL upstream=https://github.com/maurosoria/dirsearch
+
+RUN apk update
+RUN apk upgrade
+RUN apk add --no-cache \
+git python3 python3-dev py3-pip build-base libffi-dev \
+gcc musl-dev python3-dev libffi-dev openssl-dev cargo
+
+RUN git clone https://github.com/maurosoria/dirsearch /opt/dirsearch
+
+WORKDIR /opt/dirsearch
+RUN pip3 install setuptools_rust
+RUN pip3 install -r requirements.txt
+RUN ln -s /opt/dirsearch/dirsearch.py /usr/bin/dirsearch
+
+ENTRYPOINT ["dirsearch", "--recursive", "--recursion-depth=3", "--exclude-status=403", "--max-time=600", "--random-agent", "--format=json", "--url"]
