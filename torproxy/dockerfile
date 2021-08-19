@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+LABEL org.opencontainers.image.source https://github.com/thetanz/gotham
+
 RUN apk update
 RUN apk upgrade
 RUN apk add tor
