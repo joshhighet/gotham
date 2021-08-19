@@ -1,23 +1,20 @@
-![](https://avatars0.githubusercontent.com/u/2897191?s=70&v=4)    ![](https://avatars2.githubusercontent.com/u/6844498?s=70&v=4)
+![](https://avatars0.githubusercontent.com/u/2897191?s=70&v=4)
 
-<!-- core tooling & supporting/foundational functions -->
-<!-- josh.highet@theta.co.nz -->
-<!-- development/test/production -->
+# gotham
 
-# Core Tooling
-
-A collection of various tools to support operational workflows and aid commonly repeated tasks.
+various tools to support the ✨ cyber
 
 [![CodeQL](https://github.com/thetanz/gotham/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/codeql-analysis.yml)
 [![functions/](https://github.com/thetanz/gotham/actions/workflows/fn-ae-coretools-dev.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/fn-ae-coretools-dev.yml)
-[![torproxy/](https://github.com/thetanz/gotham/actions/workflows/release-to-ghcr.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/release-to-ghcr.yml)
+[![torproxy/](https://github.com/thetanz/gotham/actions/workflows/release-to-ghcr.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/release-to-ghcr.yml) [![dirsearch/](https://github.com/thetanz/gotham/actions/workflows/dirsearch-ghcr.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/dirsearch-ghcr.yml) [![sqlmap/](https://github.com/thetanz/gotham/actions/workflows/sqlmap-ghcr.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/sqlmap-ghcr.yml)
+
 ---
 
 ## functions 🌐
 
 ***namegenerator***
 
-> use [python/coolname](https://pypi.org/project/coolname) for random name generation as a REST API. Used to randomise project and incident names and along with create memorable identifiers for cloud resources.
+> uses [python/coolname](https://pypi.org/project/coolname) for random name generation
 
 `GET /api/randomname`
 
@@ -31,25 +28,21 @@ A collection of various tools to support operational workflows and aid commonly 
 
 takes website from `STDIN`
 
-    docker run sqlmap http://localhost
+    docker run ghcr.io/thetanz/gotham/sqlmap https://localhost
 
 ***dirsearch***
 
 takes website from `STDIN`
 
-    docker run dirsearch http://localhost
+    docker run ghcr.io/thetanz/gotham/dirsearch https://localhost
 
 ***torproxy***
 
 A minimal docker image exposing a SOCKS5 proxy for onion routing (tor) over tcp://9050
 
+    docker run -p9050:9050 ghcr.io/thetanz/gotham/torproxy:latest
+
 > Cloudflare have an [onion-routable DNS over HTTPS](https://developers.cloudflare.com/1.1.1.1/fun-stuff/dns-over-tor) endpoint available at `dns4torpnlfs2ifuz2s2yf3fc7rdmsbhm6rw75euj35pac6ap25zgqad.onion`
-
----
-
-> ***running***
-
-tbd
 
 > ***using within github actions***
 
@@ -74,8 +67,10 @@ jobs:
 > ***using with curl***
 
 ```shell
-curl ipinfo.io --socks5 localhost:9050 #proxy usage
-curl facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion --socks5-hostname localhost:9050 #onionsite
+# proxy usage
+curl --socks5 localhost:9050 ipinfo.io 
+# onionsite usage
+curl --socks5-hostname localhost:9050 facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion
 ```
 
 > ***using with python***
@@ -98,4 +93,5 @@ print(json.dumps(dict(response.headers)))
 ```
 
 ---
-- 2021 <a href="https://theta.co.nz/cyber" target="_blank">Theta</a>.
+
+[Theta](https://theta.co.nz)
