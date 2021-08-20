@@ -37,7 +37,8 @@ takes website from `STDIN`
 ### dumpsterdive
 
 credential scanner to traverse a local directory (recursively) for high entropy keys or password strings
-run in docker for safe execution - read-only and no networking
+
+> run in docker for safe execution (read-only and no networking)
 
     docker run --rm --network none -v "${PWD}:/dd/files:ro" ghcr.io/thetanz/gotham/dumpsterdive:latest
 
