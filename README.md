@@ -4,9 +4,7 @@
 
 various tools to support the ✨ cyber
 
-[![CodeQL](https://github.com/thetanz/gotham/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/codeql-analysis.yml)
-[![functions/](https://github.com/thetanz/gotham/actions/workflows/fn-ae-coretools-dev.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/fn-ae-coretools-dev.yml)
-[![torproxy/](https://github.com/thetanz/gotham/actions/workflows/release-to-ghcr.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/release-to-ghcr.yml) [![dirsearch/](https://github.com/thetanz/gotham/actions/workflows/dirsearch-ghcr.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/dirsearch-ghcr.yml) [![sqlmap/](https://github.com/thetanz/gotham/actions/workflows/sqlmap-ghcr.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/sqlmap-ghcr.yml)
+[![codeql/](https://github.com/thetanz/gotham/actions/workflows/codeql.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/codeql.yml) [![azurefunctions/](https://github.com/thetanz/gotham/actions/workflows/azurefunctions.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/azurefunctions.yml) [![dirsearch/](https://github.com/thetanz/gotham/actions/workflows/dirsearch.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/dirsearch.yml) [![dumpsterdive/](https://github.com/thetanz/gotham/actions/workflows/dumpsterdive.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/dumpsterdive.yml) [![sqlmap/](https://github.com/thetanz/gotham/actions/workflows/sqlmap.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/sqlmap.yml) [![torproxy/](https://github.com/thetanz/gotham/actions/workflows/torproxy.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/torproxy.yml)
 
 ---
 
@@ -41,7 +39,7 @@ takes website from `STDIN`
 credential scanner to traverse a local directory (recursively) for high entropy keys or password strings
 run in docker for safe execution - read-only and no networking
 
-    docker run --rm --network none -v "${PWD}:/dd/files:ro" ghcr.io/thetanz/gotham/dumpsterdive:latest 
+    docker run --rm --network none -v "${PWD}:/dd/files:ro" ghcr.io/thetanz/gotham/dumpsterdive:latest
 
 ### torproxy
 
