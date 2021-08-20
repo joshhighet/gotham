@@ -24,19 +24,26 @@ various tools to support the ✨ cyber
 
 ## containers  🐳
 
-***sqlmap***
+### sqlmap
 
 takes website from `STDIN`
 
     docker run ghcr.io/thetanz/gotham/sqlmap https://localhost
 
-***dirsearch***
+### dirsearch
 
 takes website from `STDIN`
 
     docker run ghcr.io/thetanz/gotham/dirsearch https://localhost
 
-***torproxy***
+### dumpsterdive
+
+credential scanner to traverse a local directory (recursively) for high entropy keys or password strings
+run in docker for safe execution - read-only and no networking
+
+    docker run --rm --network none -v "${PWD}:/dd/files:ro" ghcr.io/thetanz/gotham/dumpsterdive:latest 
+
+### torproxy
 
 A minimal docker image exposing a SOCKS5 proxy for onion routing (tor) over tcp://9050
 
@@ -44,7 +51,7 @@ A minimal docker image exposing a SOCKS5 proxy for onion routing (tor) over tcp:
 
 > Cloudflare have an [onion-routable DNS over HTTPS](https://developers.cloudflare.com/1.1.1.1/fun-stuff/dns-over-tor) endpoint available at `dns4torpnlfs2ifuz2s2yf3fc7rdmsbhm6rw75euj35pac6ap25zgqad.onion`
 
-> ***using within github actions***
+#### using within github actions
 
 _this makes use of [GitHub Actions Service Containers](https://docs.github.com/en/actions/guides/about-service-containers)_
 
@@ -64,7 +71,7 @@ jobs:
         run: curl ipinfo.io --socks5 localhost:9050
 ```
 
-> ***using with curl***
+#### using with curl
 
 ```shell
 # proxy usage
@@ -73,7 +80,7 @@ curl --socks5 localhost:9050 ipinfo.io
 curl --socks5-hostname localhost:9050 facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion
 ```
 
-> ***using with python***
+#### using with python
 
 ```python
 import json, requests

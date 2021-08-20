@@ -1,0 +1,23 @@
+FROM python:alpine AS cloner
+RUN apk update && apk add git
+WORKDIR /dd
+RUN git clone https://github.com/securing/DumpsterDiver.git
+WORKDIR /dd/DumpsterDiver
+RUN echo colorama >> requirements.txt
+
+FROM python:alpine AS builder
+LABEL org.opencontainers.image.source https://github.com/thetanz/gotham
+RUN apk update && apk add jq
+WORKDIR /dd
+COPY --from=cloner /dd/DumpsterDiver/*.yaml /dd/
+COPY --from=cloner /dd/DumpsterDiver/*.txt /dd/
+COPY --from=cloner /dd/DumpsterDiver/*.py /dd/
+COPY entry.sh /dd/
+ARG GIT_HASH
+ENV GIT_HASH=$GIT_HASH
+ARG BUILD_DATE
+ENV BUILD_DATE=$BUILD_DATE
+RUN pip install -r requirements.txt
+RUN chmod +x DumpsterDiver.py
+RUN mkdir -p /var/log/dumpsterdiver
+ENTRYPOINT ["/dd/entry.sh"]
