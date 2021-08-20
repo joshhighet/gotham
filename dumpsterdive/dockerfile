@@ -13,6 +13,7 @@ COPY --from=cloner /dd/DumpsterDiver/*.yaml /dd/
 COPY --from=cloner /dd/DumpsterDiver/*.txt /dd/
 COPY --from=cloner /dd/DumpsterDiver/*.py /dd/
 COPY entry.sh /dd/
+RUN chmod +x /dd/entry.sh
 ARG GIT_HASH
 ENV GIT_HASH=$GIT_HASH
 ARG BUILD_DATE
