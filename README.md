@@ -1,10 +1,8 @@
-![](https://avatars0.githubusercontent.com/u/2897191?s=70&v=4)
-
 # gotham
 
 various tools to support the ✨ cyber
 
-[![codeql/](https://github.com/thetanz/gotham/actions/workflows/codeql.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/codeql.yml) [![azurefunctions/](https://github.com/thetanz/gotham/actions/workflows/azurefunctions.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/azurefunctions.yml) [![dirsearch/](https://github.com/thetanz/gotham/actions/workflows/dirsearch.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/dirsearch.yml) [![dumpsterdive/](https://github.com/thetanz/gotham/actions/workflows/dumpsterdive.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/dumpsterdive.yml) [![sqlmap/](https://github.com/thetanz/gotham/actions/workflows/sqlmap.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/sqlmap.yml) [![torproxy/](https://github.com/thetanz/gotham/actions/workflows/torproxy.yml/badge.svg)](https://github.com/thetanz/gotham/actions/workflows/torproxy.yml)
+[![codeql/](https://github.com/joshhighet/gotham/actions/workflows/codeql.yml/badge.svg)](https://github.com/joshhighet/gotham/actions/workflows/codeql.yml) [![azurefunctions/](https://github.com/joshhighet/gotham/actions/workflows/azurefunctions.yml/badge.svg)](https://github.com/joshhighet/gotham/actions/workflows/azurefunctions.yml) [![dirsearch/](https://github.com/joshhighet/gotham/actions/workflows/dirsearch.yml/badge.svg)](https://github.com/joshhighet/gotham/actions/workflows/dirsearch.yml) [![dumpsterdive/](https://github.com/joshhighet/gotham/actions/workflows/dumpsterdive.yml/badge.svg)](https://github.com/joshhighet/gotham/actions/workflows/dumpsterdive.yml) [![sqlmap/](https://github.com/joshhighet/gotham/actions/workflows/sqlmap.yml/badge.svg)](https://github.com/joshhighet/gotham/actions/workflows/sqlmap.yml) [![torproxy/](https://github.com/joshhighet/gotham/actions/workflows/torproxy.yml/badge.svg)](https://github.com/joshhighet/gotham/actions/workflows/torproxy.yml)
 
 ---
 
@@ -26,13 +24,13 @@ various tools to support the ✨ cyber
 
 takes website from `STDIN`
 
-    docker run ghcr.io/thetanz/gotham/sqlmap https://localhost
+    docker run ghcr.io/joshhighet/gotham/sqlmap https://localhost
 
 ### dirsearch
 
 takes website from `STDIN`
 
-    docker run ghcr.io/thetanz/gotham/dirsearch https://localhost
+    docker run ghcr.io/joshhighet/gotham/dirsearch https://localhost
 
 ### dumpsterdive
 
@@ -40,13 +38,13 @@ credential scanner to traverse a local directory (recursively) for high entropy 
 
 > run in docker for safe execution (read-only and no networking)
 
-    docker run --rm --network none -v "${PWD}:/dd/files:ro" ghcr.io/thetanz/gotham/dumpsterdive:latest
+    docker run --rm --network none -v "${PWD}:/dd/files:ro" ghcr.io/joshhighet/gotham/dumpsterdive:latest
 
 ### torproxy
 
 A minimal docker image exposing a SOCKS5 proxy for onion routing (tor) over tcp://9050
 
-    docker run -p9050:9050 ghcr.io/thetanz/gotham/torproxy:latest
+    docker run -p9050:9050 ghcr.io/joshhighet/gotham/torproxy:latest
 
 > Cloudflare have an [onion-routable DNS over HTTPS](https://developers.cloudflare.com/1.1.1.1/fun-stuff/dns-over-tor) endpoint available at `dns4torpnlfs2ifuz2s2yf3fc7rdmsbhm6rw75euj35pac6ap25zgqad.onion`
 
@@ -60,7 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       torproxy:
-        image: ghcr.io/thetanz/gotham/torproxy:latest
+        image: ghcr.io/joshhighet/gotham/torproxy:latest
         ports:
         - 9050:9050
     steps:
@@ -97,7 +95,3 @@ session = get_tor_session()
 response = session.get("https://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion")
 print(json.dumps(dict(response.headers)))
 ```
-
----
-
-[Theta](https://theta.co.nz)

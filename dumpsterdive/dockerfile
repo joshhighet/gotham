@@ -6,7 +6,7 @@ WORKDIR /dd/DumpsterDiver
 RUN echo colorama >> requirements.txt
 
 FROM python:alpine AS builder
-LABEL org.opencontainers.image.source https://github.com/thetanz/gotham
+LABEL org.opencontainers.image.source https://github.com/joshhighet/gotham
 RUN apk update && apk add jq
 WORKDIR /dd
 COPY --from=cloner /dd/DumpsterDiver/*.yaml /dd/
