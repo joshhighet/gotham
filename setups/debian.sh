@@ -17,6 +17,7 @@ sudo apt-get -y upgrade
 APT_PACKAGES=(
   jq
   zsh
+  git
   nmap
   tree
   python3-pip
