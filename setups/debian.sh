@@ -60,5 +60,5 @@ git clone https://github.com/joshhighet/kerchow.git
 #    virtualenv
 #)
 #pip3 install ${PYPACKAGES[@]}
-cd kerchow && ./paths.sh && cd ..
+cd kerchow && ./setup.sh && cd ..
 source ~/.zshrc
