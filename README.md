@@ -13,6 +13,24 @@ this is a collection of javascript cloudflare workers to;
 - log web requests across a Cloudflare account into Splunk - [intercepting-proxy.js](cfworkers/intercepting-proxy.js)
 - make de-fanging URL's easier with on-the-fly decoding - [encoded-redirector.js](cfworkers/encoded-redirector.js)
 
+## 365erator
+
+this script can quickly translate a full ccTLD/gTLD domain lists to corresponding m365 tenant ids (~250/second)
+
+this can be useful when building a large lookup database to perform reverse searches
+
+```shell
+go run fetch.go demo-domainlist.txt
+cat demo-domainlist.txt365
+```
+
+```csv
+domain,tenantid
+microsoft.com,72f988bf-86f1-41af-91ab-2d7cd011db47
+apple.com,ba8f4151-ab0e-4da6-862d-68b05906e887
+```
+
+
 ### setups
 
 setup is a collection of scripts i use to configure new tin. these include config changes & software installations. there are initialisation scripts for macOS, macOS homebrew, debian & digitalocean alongside fast-setup scripts for an SFTP server and a canarytokens instance
@@ -38,6 +56,10 @@ takes website from `STDIN`
     docker run ghcr.io/joshhighet/gotham/dirsearch https://localhost
 
 ---
+
+### elasticsafari
+
+this script is used to intermittently poll Shodan for open elastic indicies and interrogating open indexes. can be useful when tracking elastic encryptors
 
 # useful commands
 

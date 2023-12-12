@@ -2,3 +2,4 @@
 .DS_Store
 *.pyc
 local.settings.json
+outputs/*.csv
